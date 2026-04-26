@@ -7,7 +7,7 @@ import 'package:webview_flutter/webview_flutter.dart' hide NavigationDecision;
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:file_picker/file_picker.dart';
+import 'package:file_picker/file_picker.dart' as fp;
 
 import 'flutter_flow_util.dart';
 
@@ -108,7 +108,7 @@ class _FlutterFlowWebViewState extends State<FlutterFlowWebView> {
   Future<List<String>> _androidFilePicker(
     final FileSelectorParams params,
   ) async {
-    final result = await FilePicker.pickFiles();
+    final result = await fp.FilePicker.pickFiles();
 
     if (result != null && result.files.single.path != null) {
       final file = File(result.files.single.path!);
